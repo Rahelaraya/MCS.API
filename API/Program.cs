@@ -1,10 +1,7 @@
 using Application.Interface;
 using Infrastructure.DataBase;
 using Infrastructure.Repositories;
-using Infrastructure.Validator;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 namespace API
