@@ -2,8 +2,8 @@
 using Application.Interface;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 namespace API.Controllers
 {
     [Route("api/[controller]")]
@@ -24,7 +24,6 @@ namespace API.Controllers
 
         }
 
-        // GET api/<MovingRequestController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<CustomerDto>> GetById(int id)
         {
@@ -36,7 +35,7 @@ namespace API.Controllers
             return Ok(movingRequest);
         }
 
-        // POST api/<MovingRequestController>
+      
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] MovingRequestDto movingRequestDto)
         {
@@ -51,12 +50,12 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                // Optional: Log the exception here
+                
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
 
-        // PUT api/<MovingRequestController>/5
+       
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdatemovingRequest(int id, MovingRequestDto movingRequest)
         {
@@ -66,7 +65,7 @@ namespace API.Controllers
             return NotFound();
         }
 
-        // DELETE api/<MovingRequestController>/5
+        
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {

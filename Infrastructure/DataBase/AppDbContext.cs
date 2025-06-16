@@ -1,9 +1,6 @@
 ﻿using Application.DTO;
-using Application.DTO;
-using Domain.Entities;
 using Domain.Entities;
 using Infrastructure.Repositories;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

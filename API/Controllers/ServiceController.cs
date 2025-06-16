@@ -4,7 +4,6 @@ using Domain.Entities;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace API.Controllers
 {
@@ -22,7 +21,7 @@ namespace API.Controllers
             _IServiceRepository = serviceRepository;
         }
 
-        // GET: api/<ServiceController>
+        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ServiceDto>>> GetAll()
         {
@@ -31,7 +30,6 @@ namespace API.Controllers
         }
 
 
-        // GET api/<ServiceController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ServiceDto>> GetById(int id)
         {
@@ -43,7 +41,7 @@ namespace API.Controllers
             return Ok(service);
         }
 
-        // POST api/<ServiceController>
+      
 
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] ServiceDto service)
@@ -55,19 +53,19 @@ namespace API.Controllers
 
             try
             {
-                // Replace 0 with actual userId if available
+                
                 await _IServiceRepository.AddAsync(0, service);
                 return CreatedAtAction(nameof(GetById), new { id = service.Id }, service);
             }
             catch (Exception ex)
             {
-                // Optional: Log the exception here
+                
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
 
 
-        // PUT api/<ServiceController>/5
+       
         [HttpPut("{id}")]
 
         public async Task<ActionResult> UpdateService(int id, ServiceDto service)
@@ -81,7 +79,7 @@ namespace API.Controllers
 
         }
 
-        // DELETE api/<ServiceController>/5
+        
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
